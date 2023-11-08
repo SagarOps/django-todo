@@ -20,7 +20,7 @@ services:
              python manage.py makemigrations todos &&
              python manage.py makemigrations &&
              python manage.py migrate &&
-             gunicorn todoApp.wsgi:application -b 0.0.0.0:8000"
+             gunicorn todoApp.wsgi:application -b 0.0.0.0:8000 -w 3"
     ports:
       - "8000:8000"
     depends_on:
